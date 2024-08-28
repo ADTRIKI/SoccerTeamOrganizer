@@ -1,6 +1,7 @@
+// Components/PlayerForm.js
 import React, { useState } from 'react';
 
-export const PlayerForm = ({ addPlayer }) => {
+export const PlayerForm = ({ addPlayer, teamColor }) => {
   const [value, setValue] = useState('');
 
   const handleSubmit = (e) => {
@@ -13,9 +14,9 @@ export const PlayerForm = ({ addPlayer }) => {
     <form className="PlayerForm" onSubmit={handleSubmit}>
       <input
         type="text"
-        className="player-input"
+        className={`player-input ${teamColor}`}
         value={value}
-        placeholder="Enter player name"
+        placeholder={`Add player to ${teamColor} team`}
         onChange={(e) => setValue(e.target.value)}
       />
       <button type="submit" className="player-btn">Add Player</button>
